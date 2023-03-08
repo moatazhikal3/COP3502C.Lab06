@@ -1,3 +1,4 @@
+#encode function by Moataz
 def encode_password(password):
     """Encode an 8-digit password by shifting each digit up by 3"""
     encoded = ""
@@ -7,12 +8,26 @@ def encode_password(password):
 
 
 def decode_password(encoded):
-    """Decode an encoded password by shifting each digit down by 3"""
+    """Decode an encoded password by shifting each digit down by 3
     password = ""
     for digit in encoded:
         password += str((int(digit) - 3) % 10)
-    return password
+    return password"""
 
+    #Alternate code by Megan
+    pw_dec = ''
+    pw_dec_list = list(encoded)
+    pw_list = []
+
+    pw_dec_list = [int(num) for num in pw_dec_list]
+
+    for num in pw_dec_list[0:]:
+        pw_list.append(num - 3)
+
+    for num in pw_list:
+        pw_dec += str(num)
+
+    return pw_dec
 
 
 while True:
